@@ -1,192 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 /* === HEADER === */
-.header {
-  display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-  align-items: center;
-  padding: 92px 50px 96px;
-}
-
-.header__menu {
-  justify-self: start;
-}
-
-.header__links-list {
+header {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  gap: 32px;
-  list-style: circle;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-.header__links-list-item_no-bullit {
+.menu ul {
+  display: flex;
   list-style: none;
+  gap: 20px;
 }
 
-.header__link_active {
+.menu a {
   text-decoration: none;
+  color: black;
 }
 
-.header__logo {
-  justify-self: center;
+.menu a:hover {
+  color: blue;
 }
 
-.header__logo-image {
-  width: 148px;
-  height: 105px;
+.logo img {
+  width: 120px;
 }
 
-.header__address {
-  justify-self: end;
-  max-width: 240px;
-  font-style: normal;
-  line-height: 24px;
+.contacts {
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 /* === COVER === */
 .cover {
   position: relative;
-  background-image: url('../images/cover.jpg');
+  height: 600px;
+  background-image: url("../images/cover.jpg");
   background-size: cover;
   background-position: center;
-  color: #fff;
-  padding: 165px 50px 50px;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.cover__title {
+.cover h1 {
   position: relative;
-  z-index: 2;
-  font-size: 100px;
-  font-weight: 700;
+  font-size: 70px;
   text-transform: uppercase;
-  line-height: 115%;
+  line-height: 1.1;
 }
 
-.cover__description {
+.cover span {
+  display: block;
+}
+
+.description {
   position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 135px;
+  margin-top: 30px;
 }
 
-.cover__description-text {
-  font-size: 22px;
-  word-spacing: 18px;
+.description p {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
-.bet-button {
+button {
   background: transparent;
   color: white;
-  border: 1px solid white;
-  padding: 12px 32px;
-  font-size: 22px;
+  border: 2px solid white;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 /* === LOTS === */
 .lots {
-  padding: 180px 50px 180px;
+  max-width: 1100px;
+  margin: 60px auto;
+  text-align: center;
 }
 
-.lots__heading {
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 27px;
+.lots h2 {
+  margin-bottom: 30px;
 }
 
-.lots__card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
+.lots ul {
   list-style: none;
-}
-
-.card {
-  position: relative;
-  color: #fff;
-  min-height: 450px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 50px 40px;
-  background-size: cover;
-  background-position: center;
+  justify-content: center;
+  gap: 20px;
 }
 
-.card_type_film {
-  background-image: url('../images/card-lot-01.jpg');
+.lots img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.card_type_book {
-  background-image: url('../images/card-lot-02.jpg');
-}
-
-.card_type_picture {
-  background-image: url('../images/card-lot-03.jpg');
+.more {
+  display: inline-block;
+  margin-top: 20px;
+  color: blue;
+  text-decoration: none;
 }
 
 /* === ABOUT === */
 .about {
-  display: grid;
-  grid-template-columns: 430px 1fr;
-  gap: 25px;
-  padding: 180px 50px 180px;
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: center;
+  line-height: 1.6;
 }
 
-.about__logo {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.about__logo-image {
-  width: 148px;
-  height: 114px;
-}
-
-.about__title {
-  font-size: 40px;
-  text-transform: uppercase;
-  margin-bottom: 100px;
-}
-
-.about__text p {
-  font-size: 20px;
-  line-height: 24px;
-  margin-bottom: 24px;
+.about h2 {
+  margin-bottom: 20px;
 }
 
 /* === FOOTER === */
-.footer {
-  display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-  align-items: start;
-  padding: 90px 50px 90px;
-}
-
-.footer__address {
-  font-style: normal;
-  line-height: 24px;
-}
-
-.footer__menu {
+footer {
+  background-color: black;
+  color: white;
   text-align: center;
-}
-
-.footer__social-list {
-  display: flex;
-  justify-content: flex-end;
-  gap: 48px;
-  list-style: none;
+  padding: 30px;
+  margin-top: 60px;
 }
