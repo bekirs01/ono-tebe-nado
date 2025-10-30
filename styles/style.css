@@ -7,45 +7,53 @@
 
 /* === HEADER === */
 header {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 20px;
+  padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .menu ul {
   display: flex;
-  gap: 20px;
+  list-style: none;
+  gap: 25px;
 }
 
 .menu a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.menu a.active {
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .menu a:hover {
-  color: blue;
+  text-decoration: underline;
 }
 
 .logo img {
-  width: 120px;
+  width: 100px;
 }
 
 .contacts {
+  font-size: 13px;
   text-align: right;
-  font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* === COVER === */
 .cover {
   position: relative;
-  height: 600px;
   background-image: url("../images/cover.jpg");
   background-size: cover;
   background-position: center;
+  height: 700px;
   color: white;
   text-align: center;
   padding-top: 150px;
@@ -59,9 +67,10 @@ header {
 
 .cover h1 {
   position: relative;
-  font-size: 70px;
+  font-size: 90px;
   text-transform: uppercase;
   line-height: 1.1;
+  letter-spacing: 10px;
 }
 
 .cover span {
@@ -74,68 +83,164 @@ header {
 }
 
 .description p {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
 }
 
 button {
-  background: transparent;
+  background-color: transparent;
   color: white;
   border: 2px solid white;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 28px;
+  font-size: 15px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
 }
 
 /* === LOTS === */
 .lots {
   max-width: 1100px;
-  margin: 60px auto;
-  text-align: center;
+  margin: 100px auto;
 }
 
 .lots h2 {
-  margin-bottom: 30px;
+  text-align: left;
+  font-size: 26px;
+  margin-bottom: 40px;
 }
 
 .lots ul {
-  list-style: none;
   display: flex;
+  gap: 20px;
+  list-style: none;
   justify-content: center;
-  gap: 30px;
 }
 
-.lots img {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
+.lots li {
+  position: relative;
+  width: 330px;
+  height: 440px;
+  color: white;
+  text-align: left;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lots li:nth-child(1) {
+  background-image: url("../images/card-lot-01.jpg");
+}
+.lots li:nth-child(2) {
+  background-image: url("../images/card-lot-02.jpg");
+}
+.lots li:nth-child(3) {
+  background-image: url("../images/card-lot-03.jpg");
+}
+
+.lots li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.lots li p,
+.lots li h3 {
+  position: relative;
+  z-index: 1;
+}
+
+.lots h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .more {
   display: inline-block;
-  margin-top: 20px;
-  color: blue;
-  text-decoration: none;
+  margin-top: 30px;
+  color: black;
+  font-size: 14px;
 }
 
 /* === ABOUT === */
 .about {
-  max-width: 900px;
-  margin: 60px auto;
-  text-align: center;
-  line-height: 1.6;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  align-items: center;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 100px auto;
 }
 
-.about h2 {
+.about-logo {
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  border-radius: 50%;
+  background-image: url("../images/logo-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100px;
+  justify-self: center;
+}
+
+.about-text h2 {
+  font-size: 26px;
   margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
 /* === FOOTER === */
 footer {
-  background-color: rgb(23, 49, 59);
-  color: white;
+  background-color: white;
+  color: #555;
   text-align: center;
-  padding: 30px;
-  margin-top: 60px;
+  padding: 40px 0;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.footer-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 20px 0;
+}
+
+.footer-menu a {
+  color: #555;
+  text-decoration: none;
+}
+
+.footer-menu a:hover {
+  text-decoration: underline;
+}
+
+.socials img {
+  width: 25px;
+  margin: 0 8px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.socials img:hover {
+  opacity: 1;
 }
