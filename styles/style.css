@@ -1,21 +1,22 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 html, body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background: #fff;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 a {
@@ -88,8 +89,8 @@ a {
 }
 
 .hd-logo {
-  width: 148px;
-  height: 105px;
+  width: 140px;
+  height: 100px;
   margin-inline: auto;
 }
 
@@ -421,4 +422,33 @@ a {
 
 .crd .ovl {
   display: none;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  width: 257px;
+  height: 52px;
+  line-height: 1;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.cv-desc-txt{
+  margin-left: 30px;
+  word-spacing: 18px;
+  white-space: nowrap;  
+}
+
+.cv-desc{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 78px;
 }
